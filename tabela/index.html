@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela - "Eliziane Karine"</title>
+  <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+  <div class='formulario'>
+    <form>
+      <input type='button' id='btBackground' value='Background amarelo'> |
+
+      <input type='checkbox' id='chkMudarTexto'>
+      <label for='chkMudarTexto'>
+        Texto vermelho
+      </label> |
+
+      <input type='checkbox' id='chkMudarTamanho'>
+      <label for='chkMudarTamanho'>
+        Aumentar texto nas células ao passar o mouse
+      </label> |
+
+      <input type='checkbox' id='chkTituloItalico'>
+      <label for='chkTituloItalico'>
+        Colunas de título em itálico 
+      </label> |
+
+      <input type='checkbox' id='chkInverterDiaMes'>
+      <label for='chkInverterDiaMes'>
+        Inverter dia e mês (pendente)
+      </label> |
+
+    </form>
+  </div>
+  <table id='dadosBanda'>
+    <thead id='cabecalhoBanda'>
+      <tr>
+        <th class='nome'>Nome</th>
+        <th class='instrumento'>Instrumento</th>
+        <th class='nascimento'>Nascimento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class='nome'>James Labrie</td>
+        <td class='instrumento'>Vocal</td>
+        <td class='nascimento'>01/02/1960</td>
+      </tr>
+      <tr>
+        <td class='nome'>John Petrucci</td>
+        <td class='instrumento'>Guitarra</td>
+        <td class='nascimento'>01/02/1961</td>
+      </tr>
+      <tr>
+        <td class='nome'>Jordan Rudess</td>
+        <td class='instrumento'>Teclados</td>
+        <td class='nascimento'>01/02/1963</td>
+      </tr>
+      <tr>
+        <td class='nome'>Mike Mangini</td>
+        <td class='instrumento'>Bateria</td>
+        <td class='nascimento'>01/02/1964</td>
+      </tr>
+      <tr>
+        <td class='nome'>John Myung</td>
+        <td class='instrumento'>Baixo</td>
+        <td class='nascimento'>01/02/1967</td>
+      </tr>
+    </tbody>
+  </table>
+  <script src='./js/script.js'></script>
+</body>
+</html>
