@@ -18,40 +18,6 @@ function iniciar() {
   chkTextoVermelho.addEventListener('change', MudarDiaDoMes);
 }
 
-
-function trocarParaItalico(){
-
-  var celulas = document.querySelectorAll("td");
-  console.log(celulas);
- 
-  if(this.checked) {
-    for(var i = 0; i < celulas.length; i++) {
-      celulas[i].addEventListener('mouseover', MudarParaItalico);
-      celulas[i].addEventListener('mouseout', NaoMudar);
-    }
-  }
-  else {
-    for(var i = 0; i < celulas.length; i++) {
-      celulas[i].removeEventListener('mouseover', MudarParaItalico);
-      celulas[i].removeEventListener('mouseout', NaoMudar);
-    }  
-  }
-
-}
-
-function MudarDiaDoMes(){
-    var data = new Date();
-    var dia = data.getDate();
-    if (dia.toString().length == 1)
-      dia = "0"+dia;
-    var mes = data.getMonth()+1;
-    if (mes.toString().length == 1)
-      mes = "0"+mes;
-    var ano = data.getFullYear();  
-    return mes+"/"+dia+"/"+ano;
-}
-
-
 function habilitarMudarTamanho() {
  
   var celulas = document.querySelectorAll('td');
@@ -69,16 +35,6 @@ function habilitarMudarTamanho() {
       celulas[i].removeEventListener('mouseout', diminuirTexto);
     }  
   }
-}
-
-
- 
-function MudarParaItalico() {
-  this.classList.add('MudarItalico');
-}
- 
-function NaoMudar() {
-  this.classList.remove('MudarItalico');
 }
 
 
@@ -132,5 +88,36 @@ function trocarBackground() {
     //e alteramos o texto do botão
     tabela.classList.add(classeBG);
     this.value = 'Background padrão';
+  }
+}
+
+function trocarParaItalico(){
+  var classe = 'textoItalico';
+  var cabecalho = document.querySelector('#cabecalhoBanda');  
+
+  if(this.checked) {
+    cabecalho.classList.add(classe);
+  }
+  else {
+    cabecalho.classList.remove(classe);    
+  }
+}
+
+function MudarDiaDoMes() {
+ 
+  var aux_Data_Array = document.getElementsByClassName('nascimento');  
+  var aux_data = "";
+  if(this.checked) {
+    for(var i = 1; i < aux_Data_Array .length; i++) {
+      aux_data = aux_Data_Array[i].textContent;
+      aux_Data_Array[i].textContent = aux_data.substring(3,5) + "/" + aux_data.substring(0,2) + aux_data.substring(5,10);
+    }
+    
+  }
+  else {
+    for(var i = 1; i < aux_Data_Array .length; i++) {
+      aux_data = aux_Data_Array[i].textContent;
+      aux_Data_Array[i].textContent = aux_data.substring(3,5) + "/" + aux_data.substring(0,2) + aux_data.substring(5,10);
+    }
   }
 }
